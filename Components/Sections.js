@@ -31,7 +31,7 @@ const Sections = {
       <div className={styles.panelBody}>
         <div className={styles.panelBody_description}>
           <p>
-            Avenue Packs, Fully dedicated to integrity, quality and innovation. We strive to offer a unique combination of integrated packaging solutions and services unmatched by any other company to be the best.
+             AvenuePacks, Fully dedicated to integrity, quality and innovation. We strive to offer a unique combination of integrated packaging solutions and services unmatched by any other company to be the best.
           </p>
         </div>
         <div className={styles.panelBody_actions}>
@@ -56,7 +56,7 @@ const Sections = {
         <div className={styles.panelBody_description}>
           <p>
             Bringing the best-in-class industrial packaging solution to you,
-            Avenue Packs is a packaging engineering company that stands
+             AvenuePacks is a packaging engineering company that stands
             out for its eco-friendly, innovative, cost-effective & smart
             catalogue of products
           </p>
@@ -125,7 +125,7 @@ const Sections = {
             {hover == 1 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-1.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -134,7 +134,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/1.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -150,7 +150,7 @@ const Sections = {
             {hover == 2 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-2.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -158,7 +158,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/2.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -173,7 +173,7 @@ const Sections = {
             {hover == 3 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-3.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -181,7 +181,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/3.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -198,7 +198,7 @@ const Sections = {
             {hover == 4 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-4.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -206,7 +206,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/4.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -221,7 +221,7 @@ const Sections = {
             {hover == 5 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-5.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -229,7 +229,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/5.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -244,7 +244,7 @@ const Sections = {
             {hover == 6 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-6.gif"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -252,7 +252,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/6.png"
-                alt="Avenue Packs Logo"
+                alt=" AvenuePacks Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -299,7 +299,7 @@ const Sections = {
                 styles.panelBody_actions_meet_our_clients_contact_us_title
               }
             >
-              Avenue Packs engineered packaging solution
+               AvenuePacks engineered packaging solution
             </div>
             <div
               className={
@@ -381,7 +381,17 @@ const Sections = {
         !controls.msg.validity.valid
       );
     }
-
+    const getCallbackUrl = ({ name, email = "", mobile, companyname = "", msg }) => {
+      const url =  `https://api.whatsapp.com/send?phone=918956747731&text=Hi, 
+    I need more info on cost-effective solutions for sustainable and export packaging.
+    My Information:
+    Name - ${name},
+    ${email.length > 0 ? "Email - " + email + "," : ""}
+    ${companyname.length > 0 ? "Company Name - " + companyname + "," : ""}
+    Mobile - ${mobile},
+    Message - ${msg}.`;
+    return encodeURI(url);
+    }
     const submitForm = (form) => {
       form.preventDefault();
       let controls = form.target;
@@ -393,6 +403,10 @@ const Sections = {
         data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
         formData = data;
+        let url = getCallbackUrl({ ...data });
+        let linkEle = document.getElementById("callbackUrl");
+        linkEle.setAttribute("href",url)
+        linkEle.click()
       }
     };
 
@@ -436,7 +450,7 @@ const Sections = {
           <p>
             As a young organization, our steps are cautious. Experienced
             professionals thoroughly guide hand-holding for every action taken.
-            It has been a wonderful and blessed journey for <u>Avenue Packs</u>&nbsp;
+            It has been a wonderful and blessed journey for <u> AvenuePacks</u>&nbsp;
             so far. We would like to bestow our sincere gratitude and fervent
             regards to our partners who trusted in us because, like you, we also
             value our customer&apos;s trust!
@@ -496,7 +510,7 @@ const Sections = {
                 type="text"
                 className="form-control"
                 id="floatingInputCompanyName"
-                placeholder="e.g. Avenue Packs"
+                placeholder="e.g.  AvenuePacks"
                 maxLength={100}
                 name="companyname"
               />
@@ -514,7 +528,9 @@ const Sections = {
               <label htmlFor="floatingTextarea2">Message</label>
             </div>
             <div className={styles.button}>
-              <button type="submit">Get a callback</button>
+              <a id="callbackUrl">
+                <button type="submit">Get a callback</button>
+              </a>
             </div>
           </form>
         </div>
@@ -536,7 +552,7 @@ const Sections = {
           <div>
             We{" "}
             <q>
-              <strong>Avenue Packs</strong>
+              <strong> AvenuePacks</strong>
             </q>{" "}
             are carrying out manufacturing of Heavy Duty Corrugated Boxes &
             Complete Packaging Solution, is committed to grow by providing
@@ -547,19 +563,19 @@ const Sections = {
             planning. <br />
             To enhance Customer&lsquo;s satisfaction{" "}
             <q>
-              <u>Avenue Packs</u>
+              <u> AvenuePacks</u>
             </q>{" "}
             will strict to adherence of quality management system with all
             legal requirements & continual improvements through proper
             communication with customers & periodically trainings of all
             employees. In its pursuits of excellence,{" "}
             <q>
-              <u>Avenue Packs</u>
+              <u> AvenuePacks</u>
             </q>{" "}
             shall strive achievement of an Eco-Friendly Environment &
             Employee&lsquo;s Satisfaction.{" "}
             <q>
-              <u>Avenue Packs</u>
+              <u> AvenuePacks</u>
             </q>{" "}
             strive to offer a Unique Combination of Integrated Packaging
             Solution & Services which unmatched by any other company to be the{" "}
@@ -573,7 +589,7 @@ const Sections = {
               {" "}
               Vaibhav Mumbare, Managing Director
               <br />
-              Avenue Packs, Pune (India)
+               AvenuePacks, Pune (India)
             </div>
           </div>
         ),
@@ -586,7 +602,7 @@ const Sections = {
         <div className={styles.FooterLinks__cell}>
           <Image
             src="/pixels/logo/blue-bg.png"
-            alt="Avenue Packs Logo"
+            alt=" AvenuePacks Logo"
             layout="responsive"
             width={80}
             height={40}
@@ -595,7 +611,7 @@ const Sections = {
         <div id="address" className={styles.FooterLinks__cell}>
 
           <div>
-            <label>Avenue Packs</label>
+            <label> AvenuePacks</label>
             <a>
               <p> Corporate Address</p>
               Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
