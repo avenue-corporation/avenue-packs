@@ -674,8 +674,8 @@ const Sections = {
               <span>
                 <FontAwesomeIcon icon={faGlobe} />
               </span>
-              <a href="https://avenuecorporation.in">
-                www.avenuecorporation.in
+              <a href="https://avenuepacks.com">
+                www.avenuepacks.com
               </a>
             </span>
           </span>
